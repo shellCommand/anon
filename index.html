@@ -6,6 +6,7 @@
     <!-- <link rel="stylesheet" href="https://bootswatch.com/5/solar/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="src/purify.js"></script>
   </head>
   <body>
     <div class="container main area">
@@ -51,10 +52,10 @@
             <div class="row">
               <div class="col-sm-2 avatar-container">
                 <img class="mr-3" src="./images/head.jpg" style="width:50px; height:50px;">
-                <p class="avatar-username">${e.username}</p>
+                <p class="avatar-username">${DOMPurify.sanitize(e.username)}</p>
               </div>
               <div class="col-sm-10">
-                <p>${e.content}</p>
+                <p>${DOMPurify.sanitize(e.content)}</p>
               </div>
             </div>
             <div class="row">
@@ -120,6 +121,6 @@
     init()
   </script>
   <script src="app.js"></script>
-  <script> src="https://cdn.jsdelivr.net/npm/dompurify@3.0.3/dist/purify.min.js"</script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.3/dist/purify.min.js"></script>
   </body>
 </html>
